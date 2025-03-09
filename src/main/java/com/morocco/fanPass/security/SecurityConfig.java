@@ -40,7 +40,7 @@ public class SecurityConfig {
         http
                 .csrf(csrf -> csrf.disable()) // Désactiver CSRF pour tests avec Postman
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/team/delete/**").authenticated()
+                        .requestMatchers("/team/delete/**", "/stadium/delete/**").authenticated()
                         .anyRequest().permitAll()
                 )
                 .httpBasic(httpBasic -> {}); // Activer Basic Auth
