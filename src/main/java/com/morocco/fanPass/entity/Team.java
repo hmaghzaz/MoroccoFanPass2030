@@ -1,6 +1,8 @@
 package com.morocco.fanPass.entity;
 
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,4 +24,10 @@ public class Team {
     private String name;
     private String country;
     private String flagImageUrl;
+
+    @OneToMany(mappedBy = "homeTeam", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Match> homeMatches;
+
+    @OneToMany(mappedBy = "awayTeam", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Match> awayMatches;
 }
