@@ -1,4 +1,6 @@
 package com.morocco.fanPass.entity;
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,4 +23,10 @@ public class Stadium {
     private String country;
     private Integer capacity;
     private String imageUrl;
+
+    @OneToMany(mappedBy = "stadium", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Match> matches;
+
+    @OneToMany(mappedBy = "stadium", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<SeatCategory> seatCategories;
 }

@@ -1,9 +1,7 @@
 package com.morocco.fanPass.mapper;
 
 import com.morocco.fanPass.dto.StadiumDTO;
-import com.morocco.fanPass.dto.TeamDTO;
 import com.morocco.fanPass.entity.Stadium;
-import com.morocco.fanPass.entity.Team;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -16,3 +14,4 @@ public interface StadiumMapper {
     StadiumDTO toDTO(Stadium stadium);
     Stadium toEntity(StadiumDTO dto);
 }
+ 
